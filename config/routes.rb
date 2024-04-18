@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  scope module: :public do
+    resources :posts, only: [:new, :create, :update, :edit, :show, :index, :destroy]
+  end
   #会員側
   devise_for :users,skip: [:passwords], controllers: {
     registrations: "public/registrations",
