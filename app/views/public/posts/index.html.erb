@@ -1,7 +1,7 @@
 <div class="container">
   <h3>投稿一覧</h3>
   <% @posts.each do |post| %>
-    <%= post.get_image(200, 200) %>
+    <%= image_tag post.get_image(200, 200) %>
     <%= post.name %>
     <%= post.brand %>
     <%= post.price %>

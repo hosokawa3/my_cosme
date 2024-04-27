@@ -8,6 +8,7 @@ class Public::PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
+      puts @post.errors.full_messages
       render :new
     end
   end
