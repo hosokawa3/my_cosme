@@ -5,6 +5,7 @@ class Public::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = params[:user_id]
     if @post.save
       redirect_to posts_path
     else
@@ -26,6 +27,6 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:name, :brand, :price, :review, :image)
+    params.require(:post).permit(:name, :brand, :price, :review, :image, :user_id)
   end
 end
