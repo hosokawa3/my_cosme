@@ -1,7 +1,16 @@
 <div class="container">
-  <%= image_tag @post.get_image(300, 300) %>
-  <%= @post.name %>
-  <%= @post.review %>
-  <%= @post.price %>
-  <%= @post.brand %>
+  <div class="row">
+    <div class="col-md-5">
+      <%= image_tag @post.get_image(500, 500) %>
+    </div>
+    <div class="col-md-4">
+      <h3>
+        <%= @post.name %>
+      </h3>
+      <%= @post.review %>
+      <%= @post.price %>
+      <%= @post.brand %>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
 </div>
