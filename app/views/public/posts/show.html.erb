@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-7">
       <%= image_tag @post.get_image(500, 500) %>
     </div>
-    <div class="col-md-4">
-      <h3>
+    <div class="col-md-5">
+      <h3 class="my-3">
         <%= @post.name %>
       </h3>
-      <%= @post.review %>
-      <%= @post.price %>
-      <%= @post.brand %>
+      <p><%= @post.review %></p>
+      <p><%= @post.price %></p>
+      <p><%= @post.brand %></p>
+      <%= link_to "編集する", edit_post_path(@post) %>
     </div>
-    <div class="col-md-3"></div>
   </div>
 </div>

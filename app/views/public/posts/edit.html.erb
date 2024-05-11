@@ -1,2 +1,29 @@
-<h1>Public::Posts#edit</h1>
-<p>Find me in app/views/public/posts/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <%= image_tag @post.get_image(500, 500) %>
+    </div>
+    <div class="col-md-5">
+      <%= form_with model: @post do |f| %>
+      <h4 class="my-3">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </h4>
+      <p>
+        <%= f.label :review %>
+        <%= f.text_area :review %>
+      </p>
+      <p>
+        <%= f.label :price %>
+        <%= f.text_field :price %>
+      </p>
+      <p>
+        <%= f.label :brand %>
+        <%= f.text_field :brand %>
+      </p>
+      <%= f.submit '更新' %>
+      <% end %>
+      <%= link_to "削除", post_path(@post), method: :delete %>
+    </div>
+  </div>
+</div>
