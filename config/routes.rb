@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     resources :posts, only: [:new, :create, :update, :edit, :show, :index, :destroy]
-    resources :users, only: [:show, :edit]
+    resources :users, only: [:show, :edit, :update]
   end
   #会員側
   devise_for :users,skip: [:passwords], controllers: {

@@ -1,2 +1,34 @@
-<h1>Public::Users#edit</h1>
-<p>Find me in app/views/public/users/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <h4 class="my-3">Profile edit</h4>
+    <div class="col-md-7">
+      <%= form_with model: @user do |f| %>
+      <div class="form-group row">
+        <%= f.label :user_name, class: 'col-md-4 col-form-label' %>
+        <div class="col-md-8">
+          <%= f.text_field :user_name, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row my-2">
+        <%= f.label :age, class: 'col-md-4 col-form-label' %>
+        <div class="col-md-8">
+          <%= f.text_field :age, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row my-2">
+        <%= f.label :introduction, class: 'col-md-4 col-form-label' %>
+        <div class="col-md-8">
+          <%= f.text_area :introduction, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group row my-2">
+        <%= f.label :email, class: 'col-md-4 col-form-label' %>
+        <div class="col-md-8">
+          <%= f.text_field :email, class: 'form-control' %>
+        </div>
+      </div>
+      <%= f.submit "save" %>
+      <% end %>
+    </div>
+  </div>
+</div>
