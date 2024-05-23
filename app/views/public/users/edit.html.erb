@@ -2,7 +2,7 @@
   <div class="row">
     <h4 class="my-3">Profile edit</h4>
     <div class="col-md-7">
-      <%= form_with model: @user do |f| %>
+      <%= form_with model: @user, url: update_information_path do |f| %>
       <div class="form-group row">
         <%= f.label :user_name, class: 'col-md-4 col-form-label' %>
         <div class="col-md-8">
