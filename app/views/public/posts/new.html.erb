@@ -1,16 +1,22 @@
 <div class="container">
-  <h3>投稿する</h3>
-  <%= form_with model: @post do |f| %>
-  <%= f.label :image, '商品画像' %>
-  <%= f.file_field :image, accept: "image/*" %>
-  <%= f.label :name, '商品名' %>
-  <%= f.text_field :name %>
-  <%= f.label :review, '評価' %>
-  <%= f.text_area :review %>
-  <%= f.label :brand, 'ブランド' %>
-  <%= f.text_field :brand %>
-  <%= f.label :price, '価格' %>
-  <%= f.text_field :price %>
-  <%= f.submit "投稿" %>
-  <% end %>
+  <div class="row">
+    <h3>New post</h3>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <%= form_with model: @post do |f| %>
+      <%= f.label :image, '商品画像' %>
+      <%= f.file_field :image, accept: "image/*", class: 'form-control' %>
+      <%= f.label :name, '商品名' %>
+      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.label :review, '評価' %>
+      <%= f.text_area :review, class: 'form-control' %>
+      <%= f.label :brand, 'ブランド' %>
+      <%= f.text_field :brand, class: 'form-control' %>
+      <%= f.label :price, '価格' %>
+      <%= f.text_field :price, class: 'form-control' %>
+      <%= f.submit "投稿" %>
+      <% end %>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
 </div>
