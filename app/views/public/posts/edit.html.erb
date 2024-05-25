@@ -5,13 +5,17 @@
     </div>
     <div class="col-md-5">
       <%= form_with model: @post do |f| %>
-      <div class="form-group row my-3">
+      <div class="form-group row mt-5">
         <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
+        <div class="input-group">
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
       </div>
       <div class="form-group row">
         <%= f.label :review %>
-        <%= f.text_area :review, class: 'form-control' %>
+        <div class="input-group">
+          <%= f.text_area :review, class: 'form-control' %>
+        </div>
       </div>
       <div class="form-group row">
         <%= f.label :price %>
@@ -23,7 +27,9 @@
       </div>
       <div class="form-group row">
         <%= f.label :brand %>
-        <%= f.text_field :brand, class: 'form-control' %>
+        <div class="input-group">
+          <%= f.text_field :brand, class: 'form-control' %>
+        </div>
       </div>
       <%= render "rate", post: @post %>
       <%= f.submit '更新' %>

@@ -1,13 +1,27 @@
 <div class="container">
   <h3>投稿一覧</h3>
   <% @posts.each do |post| %>
-    <%= link_to post_path(post) do %>
-    <%= image_tag post.get_image(200, 200) %>
-    <% end %>
-    <%= post.name %>
-    <%= post.brand %>
-    <%= post.price %>円
-    <%= post.review %>
-    <%= render "rate", post: post %>
+  <div class="card mb-3" style="max-width: 900px;">
+    <div class="row g-0">
+      <div class="col-md-5">
+        <%= link_to post_path(post) do %>
+          <%= image_tag post.get_image(200, 200), class: 'img-fluid rounded-start' %>
+        <% end %>
+      </div>
+      <div class="col-md-7">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.name %></h5>
+          <p class="card-text">
+            <%= post.brand %>
+            ¥<%= post.price %>
+          </p>
+          <p class="card-text d-inline-block text-truncate" style="max-width: 400px;"><%= post.review %></p>
+          <%= render "rate", post: post %>
+        </div>
+      </div>
+    </div>
+  </div>
   <% end %>
+
+
 </div>

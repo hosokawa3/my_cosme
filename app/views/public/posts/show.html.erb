@@ -11,6 +11,7 @@
       <p><%= @post.price %>円</p>
       <p><%= @post.brand %></p>
       <p><%= render "rate", post: @post %></p>
+      <p class="user_name fw-lighter">投稿者:<%= @post.user.user_name %></p>
       <%= link_to "編集する", edit_post_path(@post) %>
     </div>
   </div>
