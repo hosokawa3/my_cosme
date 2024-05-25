@@ -14,6 +14,26 @@
       <%= f.text_field :brand, class: 'form-control' %>
       <%= f.label :price, '価格' %>
       <%= f.text_field :price, class: 'form-control' %>
+      <div id="star">
+        <%= f.label :star %>
+        <%= f.hidden_field :star, id: :review_star, class: 'form-control' %>
+        <div id="post_raty"></div>
+      </div>
+      <script>
+        $(document).on('turbolinks:load', function() {
+          let elem = document.querySelecter('#post_raty');
+          if (elem == null) return;
+
+          elem.innerHTML = ""
+          let opt = {
+            starOn: "<%= asset_path('star-on.png') %>",
+            starOff: "<%= asset_path('star-off.png') %>",
+            starHarf: "<%= asset_path('star-half.png') %>",
+            scoreName: 'post[star]',
+          };
+          raty(elem, opt);
+        });
+      </script>
       <%= f.submit "投稿" %>
       <% end %>
     </div>
