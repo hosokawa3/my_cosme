@@ -4,12 +4,13 @@
       <%= image_tag @post.get_image(500, 500) %>
     </div>
     <div class="col-md-5">
-      <h3 class="my-3">
+      <h3 class="my-5">
         <%= @post.name %>
       </h3>
       <p><%= @post.review %></p>
       <p><%= @post.price %>円</p>
       <p><%= @post.brand %></p>
+      <p><%= render "rate", post: @post %></p>
       <%= link_to "編集する", edit_post_path(@post) %>
     </div>
   </div>

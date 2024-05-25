@@ -25,6 +25,7 @@
         <%= f.label :brand %>
         <%= f.text_field :brand, class: 'form-control' %>
       </div>
+      <%= render "rate", post: @post %>
       <%= f.submit '更新' %>
       <% end %>
       <%= link_to "削除", post_path(@post), method: :delete %>
