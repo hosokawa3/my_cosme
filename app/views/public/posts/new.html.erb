@@ -8,27 +8,26 @@
       <%= f.file_field :image, accept: "image/*", class: 'form-control' %>
       <%= f.label :name, '商品名' %>
       <%= f.text_field :name, class: 'form-control' %>
-      <%= f.label :review, '評価' %>
+      <%= f.label :review, '感想' %>
       <%= f.text_area :review, class: 'form-control' %>
       <%= f.label :brand, 'ブランド' %>
       <%= f.text_field :brand, class: 'form-control' %>
       <%= f.label :price, '価格' %>
       <%= f.text_field :price, class: 'form-control' %>
       <div id="star">
-        <%= f.label :star %>
+        <%= f.label :star, '評価' %>
         <%= f.hidden_field :star, id: :review_star, class: 'form-control' %>
         <div id="post_raty"></div>
       </div>
       <script>
         $(document).on('turbolinks:load', function() {
-          let elem = document.querySelecter('#post_raty');
+          let elem = document.querySelector('#post_raty');
           if (elem == null) return;
 
           elem.innerHTML = ""
           let opt = {
             starOn: "<%= asset_path('star-on.png') %>",
             starOff: "<%= asset_path('star-off.png') %>",
-            starHarf: "<%= asset_path('star-half.png') %>",
             scoreName: 'post[star]',
           };
           raty(elem, opt);
