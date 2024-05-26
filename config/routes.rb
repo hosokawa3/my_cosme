@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root to: 'homes#top'
+    get '/about' => 'homes#about'
     get 'users/profile/:id' => 'users#show', as: 'profile'
     get 'users/information/edit/:id' => 'users#edit', as: 'edit_information'
     patch 'users/information/:id' => 'users#update', as: 'update_information'
