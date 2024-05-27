@@ -4,30 +4,30 @@
     <div class="col-md-7">
       <%= form_with model: @user, url: update_information_path do |f| %>
       <div class="form-group row">
-        <%= f.label :user_name, class: 'col-md-4 col-form-label' %>
+        <%= f.label :user_name, 'ユーザーネーム', class: 'col-md-4 col-form-label' %>
         <div class="col-md-8">
           <%= f.text_field :user_name, class: 'form-control' %>
         </div>
       </div>
       <div class="form-group row my-2">
-        <%= f.label :age, class: 'col-md-4 col-form-label' %>
+        <%= f.label :age, '年齢', class: 'col-md-4 col-form-label' %>
         <div class="col-md-8">
           <%= f.text_field :age, class: 'form-control' %>
         </div>
       </div>
       <div class="form-group row my-2">
-        <%= f.label :introduction, class: 'col-md-4 col-form-label' %>
+        <%= f.label :introduction, '自己紹介', class: 'col-md-4 col-form-label' %>
         <div class="col-md-8">
           <%= f.text_area :introduction, class: 'form-control' %>
         </div>
       </div>
       <div class="form-group row my-2">
-        <%= f.label :email, class: 'col-md-4 col-form-label' %>
+        <%= f.label :email, 'メールアドレス', class: 'col-md-4 col-form-label' %>
         <div class="col-md-8">
           <%= f.text_field :email, class: 'form-control' %>
         </div>
       </div>
-      <%= f.submit "save" %>
+      <%= f.submit "save", class: "btn btn-light" %>
       <% end %>
     </div>
   </div>

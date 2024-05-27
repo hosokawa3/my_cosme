@@ -12,7 +12,9 @@
       <p><%= @post.brand %></p>
       <p><%= render "rate", post: @post %></p>
       <p class="user_name fw-lighter">投稿者:<%= @post.user.user_name %></p>
-      <%= link_to "編集する", edit_post_path(@post) %>
+      <%= link_to edit_post_path(@post), class: "btn btn-light" do %>
+      <i class="fa-solid fa-pen" style="color: #a1a1a1;"></i>編集する
+      <% end %>
     </div>
   </div>
 </div>

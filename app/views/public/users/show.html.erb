@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <h4 class="my-3">My profile<%= link_to edit_information_path(@user), class: "btn btn-light btn-lg" do %>
-    <i class="fa-solid fa-gear" style="color: #d7dad6;"></i>
+    <i class="fa-solid fa-gear" style="color: #a1a1a1;"></i>
     <% end %>
     </h4>
     <div class="col-md-3">
-      <p>user name</p>
-      <p>age</p>
-      <p>introduction</p>
+      <p>ユーザーネーム</p>
+      <p>年齢</p>
+      <p>自己紹介</p>
     </div>
     <div class="col-md-5">
       <p><%= @user.user_name %></p>
