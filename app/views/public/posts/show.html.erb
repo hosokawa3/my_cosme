@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-7 my-3">
       <%= image_tag @post.get_image(500, 500) %>
     </div>
     <div class="col-md-5">
@@ -11,7 +11,9 @@
       <p><%= @post.price %>円</p>
       <p><%= @post.brand %></p>
       <p><%= render "rate", post: @post %></p>
-      <p class="user_name fw-lighter">投稿者:<%= @post.user.user_name %></p>
+      <p class="user_name fw-lighter">
+        投稿者:<%= @post.user.user_name %>さん <%= @post.user.age %>歳
+      </p>
       <%= link_to edit_post_path(@post), class: "btn btn-light" do %>
       <i class="fa-solid fa-pen" style="color: #a1a1a1;"></i>編集する
       <% end %>
